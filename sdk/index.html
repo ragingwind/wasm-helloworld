@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <script>
     const memory = new WebAssembly.Memory({
@@ -43,15 +42,14 @@
     }
 
     createWebAssembly('helloworld.wasm', importObject).then(wa => {
-      const exports = wa.instance.exports
+      const {_getString, _getLength} = wa.instance.exports
       const buffer = new Uint8Array(memory.buffer)
       const ouput = document.querySelector('#output')
-      ouput.textContent = getString(buffer, exports._getString(), exports._getLength())
+      ouput.textContent = getString(buffer, _getString(), _getLength())
     }).catch(err => console.error(err))
   </script>
 </head>
 <body>
   <div id="output"></div>
 </body>
-
 </html>
