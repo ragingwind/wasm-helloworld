@@ -1,4 +1,3 @@
-#include <string.h>
 #include <emscripten/emscripten.h>
 
 const char* HELLO_WORLD = "Hello World!";
