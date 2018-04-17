@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    const memory = new WebAssembly.Memory({
+      initial: 256,
+      maximum: 256
+    })
+    const env = {
+      'abortStackOverflow': _ => {
+        throw new Error('overflow')
+      },
+      'table': new WebAssembly.Table({
+        initial: 0,
+        maximum: 0,
+        element: 'anyfunc'
+      }),
+      'tableBase': 0,
+      'memory': memory,
+      'memoryBase': 1024,
+      'STACKTOP': 0,
+      'STACK_MAX': memory.buffer.byteLength,
+    }
+    const importObject = {
+      'global': {},
+      env
+    }
+
+    async function createWebAssembly(path, importObject) {
+      const bytes = await window.fetch(path).then(x => x.arrayBuffer())
+      return await WebAssembly.instantiate(bytes, importObject)
+    }
+
+    function getString(buffer, index, size) {
+      let str = '';
+
+      for (let i = index; i < index + size; ++i) {
+        str += String.fromCharCode(buffer[i])
+      }
+
+      return str;
+    }
+
+    createWebAssembly('helloworld.wasm', importObject).then(wa => {
+      const exports = wa.instance.exports
+      const buffer = new Uint8Array(memory.buffer)
+      const ouput = document.querySelector('#output')
+      ouput.textContent = getString(buffer, exports._getString(), exports._getLength())
+    }).catch(err => console.error(err))
+  </script>
+</head>
+<body>
+  <div id="output"></div>
+</body>
+
+</html>
