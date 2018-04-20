@@ -16,7 +16,8 @@ Each demo has own npm dependencies in package.json to build and start applicatio
 - asm-webpack: asm.js with WABT and webpack 4
 - clang-wasm: C/C++ Language with Emscripten and WASM APIs
 - rust-wasm: Rust Language with Emscripten and WASM APIs
-
+- rust-parcel: Rust Language with parcel bundler
+- ts-wasm: Typescript(AssemblyScript) with WASM APIs
 
 # License
 
