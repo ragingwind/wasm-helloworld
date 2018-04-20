@@ -1,0 +1,10 @@
+{
+  "name": "asm",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "../node_modules/.bin/serve .",
+    "build:webpack": "../node_modules/.bin/webpack --mode=development --output-public-path=/dist/",
+    "build:wasm": "asm2wasm ./wasm/fibonacci.js | grep -v '(import \"env\"' > ./wasm/fibonacci.wast && wat2wasm ./wasm/fibonacci.wast -o ./wasm/fibonacci.wasm",
+    "build": "npm run build:wasm && npm run build:webpack"
+  }
+}
