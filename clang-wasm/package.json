@@ -2,7 +2,7 @@
   "name": "clang",
   "version": "0.0.0",
   "scripts": {
-    "start": "serve .",
+    "start": "../node_modules/.bin/serve .",
     "build:dylib": "emcc ./wasm/helloworld-dylib.c -Os -s WASM=1 -s SIDE_MODULE=1 -o ./wasm/helloworld-dylib.wasm",
     "build:std": "emcc ./wasm/helloworld-std.c -Os -s WASM=1 -s ONLY_MY_CODE=1 -o ./wasm/helloworld-std.js",
     "build": "npm run build:dylib && npm run build:std"
