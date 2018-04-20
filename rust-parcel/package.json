@@ -1,0 +1,11 @@
+{
+  "name": "clang",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "../node_modules/.bin/serve .",
+    "build": "parcel build src/index.js --out-dir ./dist"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.7.1"
+  }
+}
