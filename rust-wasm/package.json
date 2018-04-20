@@ -1,0 +1,9 @@
+{
+  "name": "clang",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "serve .",
+    "build:wasm": "rustc --target wasm32-unknown-unknown -O ./wasm/math.rs -o ./wasm/math.wasm",
+    "build": "&& npm run build:wasm"
+  }
+}

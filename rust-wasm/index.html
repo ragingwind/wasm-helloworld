@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="./wasm-loader.js"></script>
+  <script>
+    wasmInstantiate('./wasm/math.wasm').then(({instance}) => {
+      const {square} = instance.exports
+      const ouput = document.querySelector('#output')
+      ouput.innerHTML = `${square(100)}<br/>`
+    })
+  </script>
+</head>
+<body>
+  <div id="output"></div>
+</body>
+</html>

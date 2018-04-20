@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="./wasm-loader.js"></script>
+  <script>
+    function getString(buffer, index, size) {
+      let str = '';
+      for (let i = index; i < index + size; ++i) {
+        str += String.fromCharCode(buffer[i])
+      }
+      return str;
+    }
+
+    function printString({instance, env}) {
+      const {_str, _len} = instance.exports
+      const buffer = new Uint8Array(env.memory.buffer)
+      const ouput = document.querySelector('#output')
+      ouput.innerHTML += getString(buffer, _str(), _len()) + '<br/>'
+    }
+
+    const importObject = {
+      env: {
+        table: new WebAssembly.Table({
+          initial: 4,
+          element: 'anyfunc'
+        })
+      }
+    }
+
+    wasmInstantiate('./wasm/helloworld-std.wasm', importObject).then(printString)
+    wasmInstantiate('./wasm/helloworld-dylib.wasm', importObject).then(printString)
+  </script>
+</head>
+<body>
+  <div id="output"></div>
+</body>
+</html>
