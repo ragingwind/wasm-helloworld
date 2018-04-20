@@ -1,0 +1,12 @@
+{
+  "name": "clang",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "../node_modules/.bin/serve .",
+    "build:wasm": " asc ./wasm/fibonacci.ts -o ./wasm/fibonacci.wasm --optimize --validate --sourceMap",
+    "build": "npm run build:wasm"
+  },
+  "devDependencies": {
+    "assemblyscript": "AssemblyScript/assemblyscript"
+  }
+}
