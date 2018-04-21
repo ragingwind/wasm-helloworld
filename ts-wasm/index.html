@@ -4,8 +4,9 @@
   <script src="./wasm-loader.js"></script>
   <script>
     wasmInstantiate('./wasm/fibonacci.wasm').then(({instance}) => {
-      console.log(instance)
-      // ouput.innerHTML = `${square(100)}<br/>`
+      const {fibonacci} = instance.exports
+      const ouput = document.querySelector('#output')
+      ouput.innerHTML = `${fibonacci(5)}<br/>`
     })
   </script>
 </head>
