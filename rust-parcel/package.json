@@ -2,7 +2,7 @@
   "name": "clang",
   "version": "0.0.0",
   "scripts": {
-    "start": "../node_modules/.bin/serve .",
+    "start": "parcel index.html --open -p 8080",
     "build": "parcel build src/index.js --out-dir ./dist"
   },
   "devDependencies": {
