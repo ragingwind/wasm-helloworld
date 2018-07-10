@@ -1,0 +1,17 @@
+{
+  "name": "rust-webgl",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jimmy Moon <ragingwind@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html --open -p 8080",
+    "build": "parcel build index.html --out-dir ./dist && npm run cargo",
+    "cargo": "cargo build --release --target=wasm32-unknown-emscripten && cp target/wasm32-unknown-emscripten/release/*.js ./dist && cp target/wasm32-unknown-emscripten/release/*.wasm ./dist"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "parcel-bundler": "^1.9.4"
+  }
+}
