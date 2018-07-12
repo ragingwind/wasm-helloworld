@@ -1,0 +1,8 @@
+dist
+node_modules
+.cache
+.vscode
+
+/src/alert*.*
+/target
+**/*.rs.bk

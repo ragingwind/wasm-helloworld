@@ -1,0 +1,15 @@
+{
+  "name": "rust-wasm-bindgen",
+  "version": "0.0.0",
+  "scripts": {
+    "cargo": "cargo +nightly build --target wasm32-unknown-unknown && wasm-bindgen target/wasm32-unknown-unknown/debug/alert.wasm --out-dir ./src",
+    "clean": "rm -rf ./dist .cache ./target",
+    "build": "webpack ./src/index.js -o dist/index.js",
+    "start": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  }
+}

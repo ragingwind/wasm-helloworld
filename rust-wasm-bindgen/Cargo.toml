@@ -1,0 +1,11 @@
+[package]
+name = "alert"
+version = "0.1.0"
+authors = ["Jimmy Moon <ragingwind@gmail.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+path="./wasm/alert.rs"
+
+[dependencies]
+wasm-bindgen = "0.2.11"
