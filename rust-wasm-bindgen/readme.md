@@ -1,6 +1,6 @@
 # Rust with wasm-bindgen 
 
-> This sample has been wrote following by [Basic Usage](https://github.com/rustwasm/wasm-bindgen/blob/master/guide/src/basic-usage.md) with wasm-bindgen. Webpack will served files because of a (lack of features in parcel](https://github.com/rustwasm/wasm-bindgen/issues/182)
+> This sample has been wrote following by [Basic Usage](https://github.com/rustwasm/wasm-bindgen/blob/master/guide/src/basic-usage.md) with wasm-bindgen. Webpack will served files because of a [lack of features in parcel](https://github.com/rustwasm/wasm-bindgen/issues/182)
 
 ## Changes
 
