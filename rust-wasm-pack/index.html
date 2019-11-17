@@ -2,6 +2,6 @@
   (async () => {
     const {instance} = await WebAssembly.instantiateStreaming(fetch('./pkg/square_bg.wasm'));
     const {square} = instance.exports;
-    console.log(square(10, 10));
+    document.querySelector('body').textContent = square(10, 10)
   })();
 </script>
