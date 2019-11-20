@@ -1,0 +1,13 @@
+<script type="text/javascript" src="./pkg/rust_thread.js"></script>
+<script type="module">
+  wasm_bindgen("./pkg/rust_thread_bg.wasm")
+    .then(luanch)
+    .catch(console.error);
+
+  const {WorkerPool} = wasm_bindgen;
+
+  function luanch() {
+    const pool = new WorkerPool(navigator.hardwareConcurrency);
+    pool.start(3);
+  }
+</script>

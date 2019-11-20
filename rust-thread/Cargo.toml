@@ -1,0 +1,30 @@
+[package]
+name = "rust-thread"
+version = "0.1.0"
+authors = ["Jimmy Moon <ragingwind@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+js-sys = "0.3.31"
+wasm-bindgen = { version = "0.2.54", features = ['serde-serialize'] }
+wasm-bindgen-futures = "0.4.4"
+
+[dependencies.web-sys]
+version = "0.3.23"
+features = [
+  'CanvasRenderingContext2d',
+  'ErrorEvent',
+  'Event',
+  'ImageData',
+  'Navigator',
+  'Window',
+  'Worker',
+  'WorkerOptions',
+  'DedicatedWorkerGlobalScope',
+  'MessageEvent',
+]
