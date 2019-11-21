@@ -1,8 +1,0 @@
-{
-  "name": "clang-thread",
-  "version": "0.0.0",
-  "scripts": {
-    "start": "http-server .",
-    "build": "emcc -O2 -s USE_PTHREADS=1 -s PTHREAD_POOL_SIZE=2 -o ./wasm/test.js ./wasm/test.c"
-  }
-}
