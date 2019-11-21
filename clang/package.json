@@ -8,6 +8,6 @@
     "build": "npm run build:dylib && npm run build:std"
   },
   "devDependencies": {
-    "serve": "^6.5.5"
+    "serve": "^11.2.0"
   }
 }
