@@ -10,7 +10,7 @@ self.onmessage = async ({data}) => {
         await wasm_bindgen(...data[1]);
         break;
       case 'work':
-        wasm_bindgen.child_entry_point(data[1]);
+        wasm_bindgen.thread_execute(data[1]);
         break;
     }
   } catch (e) {
