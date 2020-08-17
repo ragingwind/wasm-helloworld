@@ -1,0 +1,16 @@
+<body>
+  <script src="lib.js"></script>
+  <script>
+    runWasm('multiply_arrays_simd', () => {
+      Module.onRuntimeInitialized = (_) => {
+        const array = Array.from(Array(655580), (_, i) => i + 1);
+        const arr1 = TypedArrayToHeap(new Int32Array(array.length));
+        const arr2 = TypedArrayToHeap(new Int32Array(array));
+        const arr3 = TypedArrayToHeap(new Int32Array(array));
+
+        multiply('multiply_arrays_simd_intrinsics', array, arr1, arr2, arr3);
+        multiply('multiply_arrays_simd', array, arr1, arr2, arr3);
+      };
+    });
+  </script>
+</body>

@@ -23,7 +23,8 @@ Each demo has own npm dependencies or own environment to build and start applica
 ## C/C++ Languages
 - clang: Emscripten and WASM APIs, Basic sample, show two of types compiling, static and dynamic
 - clang-thread: Show how to use c with thread. Implementation of official sample from Google\
-- clang-arrat: Show how to manage numberic array
+- clang-array: Show how to manage numberic array
+- clang-simd: Show how WASM is working with SIMD
 
 ## Rust Languages
 - rust: Rust Language with Emscripten and WASM APIs

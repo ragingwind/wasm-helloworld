@@ -1,0 +1,16 @@
+<body>
+  <script src="lib.js"></script>
+  <script>
+    const func = 'multiply_arrays';
+    runWasm(func, () => {
+      Module.onRuntimeInitialized = (_) => {
+        const array = Array.from(Array(655580), (_, i) => i + 1);
+        const arr1 = TypedArrayToHeap(new Int32Array(array.length));
+        const arr2 = TypedArrayToHeap(new Int32Array(array));
+        const arr3 = TypedArrayToHeap(new Int32Array(array));
+
+        multiply(func, array, arr1, arr2, arr3);
+      };
+    });
+  </script>
+</body>
