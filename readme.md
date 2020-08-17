@@ -20,24 +20,28 @@ Each demo has own npm dependencies or own environment to build and start applica
 
 # Demos
 
-## Bundlers
-- asm-webpack: asm.js with WABT and webpack 4
-
 ## C/C++ Languages
-- clang-wasm: Emscripten and WASM APIs, Basic sample, show two of types compiling, static and dynamic
+- clang: Emscripten and WASM APIs, Basic sample, show two of types compiling, static and dynamic
 - clang-thread: Show how to use c with thread. Implementation of official sample from Google\
+- clang-arrat: Show how to manage numberic array
 
 ## Rust Languages
-- rust-wasm: Rust Language with Emscripten and WASM APIs
-- rust-wasm-bindgen: Rust Language with wasm-bindgen
+- rust: Rust Language with Emscripten and WASM APIs
 - rust-parcel: Rust Language with parcel bundler
+- rust-thread
+- rust-wasm-bindgen: Rust Language with wasm-bindgen
+- rust-wasm-pack
+- rust-webgl
 
 ## Typescript
-- ts-wasm: Typescript(AssemblyScript) with WASM APIs
+- ts-assembly-script: Typescript(AssemblyScript) with WASM APIs
 
 ## Golang
-- go-wasm: Go with WASM
+- go: Go with WASM
+
+## asm.js
+- asm-webpack: asm.js with WABT and webpack 4
 
 # License
 
-MIT @ CODEBUSKING
+MIT @ Jimmy Moon
