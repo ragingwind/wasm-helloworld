@@ -1,0 +1,38 @@
+<script src="print_array.js"></script>
+<script>
+  function TypedArrayToHeap(arr) {
+    const { name, BYTES_PER_ELEMENT } = arr.constructor;
+    const prefix = name.charAt(0).replace(/I|B/, '');
+    const heap = Module[`HEAP${prefix}${BYTES_PER_ELEMENT << 3}`];
+
+    if (!heap) {
+      throw new Error(`Unknow typed array ${heap}`);
+    }
+
+    console.log('Set with', `HEAP${prefix}${BYTES_PER_ELEMENT << 3}`, BYTES_PER_ELEMENT);
+
+    const ptr = Module._malloc(arr.length * BYTES_PER_ELEMENT);
+    heap.set(arr, ptr / BYTES_PER_ELEMENT);
+    return ptr;
+  }
+
+  Module.onRuntimeInitialized = (_) => {
+    // integer 32bit
+    const print_iarray = Module.cwrap('print_iarray', ['number', 'number']);
+    print_iarray(TypedArrayToHeap(new Int32Array([1, 2, 3])), 3);
+
+    // float 32bit
+    const print_farray = Module.cwrap('print_farray', ['number', 'number']);
+    print_farray(
+      TypedArrayToHeap(new Float32Array([1.1, 2.1, 3.14])),
+      3
+    );
+
+    // float 64bit
+    const print_darray = Module.cwrap('print_darray', ['number', 'number']);
+    print_darray(
+      TypedArrayToHeap(new Float64Array([1.1, 2.1, 3.141592653589793])),
+      3
+    );
+  };
+</script>
