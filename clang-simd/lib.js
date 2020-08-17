@@ -20,29 +20,6 @@ function runWasm(func, onload) {
   document.body.appendChild(script);
 }
 
-// function multiply(func, array) {
-//   const size = array.length;
-//   const arr1 = TypedArrayToHeap(new Int32Array(size));
-//   const arr2 = TypedArrayToHeap(new Int32Array(array));
-//   const arr3 = TypedArrayToHeap(new Int32Array(array));
-//   const time = [0, 0];
-
-//   time[0] = performance.now();
-
-//   Module.ccall(
-//     func,
-//     null,
-//     ['number', 'number', 'number', 'number'],
-//     [arr1, arr2, arr3, size]
-//   );
-
-//   time[1] = performance.now();
-
-//   const startPtr = arr1 / Int32Array.BYTES_PER_ELEMENT;
-//   const diff = time[1] - time[0];
-//   console.log(`${diff} result of ${func} with ${size} size`);
-// }
-
 function multiply(func, array, arr1, arr2, arr3) {
   const size = array.length;
   const time = [0, 0];
