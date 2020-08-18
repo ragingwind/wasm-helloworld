@@ -1,4 +1,6 @@
 <body>
+  <h1>Multiply without SIMD</h1>
+  <div id="result"></div>
   <script src="lib.js"></script>
   <script>
     const func = 'multiply_arrays';
@@ -9,7 +11,8 @@
         const arr2 = TypedArrayToHeap(new Int32Array(array));
         const arr3 = TypedArrayToHeap(new Int32Array(array));
 
-        multiply(func, array, arr1, arr2, arr3);
+        const time = multiply(func, array, arr1, arr2, arr3);
+        setRunResult(func, time);
       };
     });
   </script>

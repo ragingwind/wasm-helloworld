@@ -35,7 +35,11 @@ function multiply(func, array, arr1, arr2, arr3) {
 
   time[1] = performance.now();
 
-  const startPtr = arr1 / Int32Array.BYTES_PER_ELEMENT;
-  const diff = time[1] - time[0];
-  console.log(`${func}: ${diff} with ${size} length`);
+  return time[1] - time[0];
+}
+
+function setRunResult(func, result) {
+  const e = document.querySelector('#result')
+  e.setAttribute('style', 'white-space: pre;');
+  e.textContent += `${func}: ${result}\r\n`;
 }
