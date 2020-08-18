@@ -39,7 +39,17 @@ function multiply(func, array, arr1, arr2, arr3) {
 }
 
 function setRunResult(func, result) {
-  const e = document.querySelector('#result')
+  const e = document.querySelector('#result');
   e.setAttribute('style', 'white-space: pre;');
   e.textContent += `${func}: ${result}\r\n`;
+}
+
+function getInt32Value(arr, index = 0) {
+  const startPtr = arr / Int32Array.BYTES_PER_ELEMENT;
+  return arr + index;
+}
+
+function subInt32Array(arr, begin = 0, end = undefined) {
+  const startPtr = arr / Int32Array.BYTES_PER_ELEMENT;
+  return new Int32Array(HEAP32.subarray(startPtr + begin, startPtr + (end ? end : arr.length)));
 }
