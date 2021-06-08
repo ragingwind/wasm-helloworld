@@ -1,4 +1,4 @@
-# rust-thread example
+# rust-wasi-node example
 
 > The demo shows how WASI work with Node.js
 
