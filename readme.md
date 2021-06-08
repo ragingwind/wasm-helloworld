@@ -33,6 +33,7 @@ Each demo has own npm dependencies or own environment to build and start applica
 - rust-wasm-bindgen: Rust Language with wasm-bindgen
 - rust-wasm-pack
 - rust-webgl
+- rust-wasi-node: WASI demo with Rust and Node.js
 
 ## Typescript
 - ts-assembly-script: Typescript(AssemblyScript) with WASM APIs
